@@ -1,0 +1,10 @@
+[
+    {
+        "merged": "/mnt/hd1/home/john/dev/parcelerTest/parcelerTest/build/intermediates/res/merged/debug/layout/activity_first.xml",
+        "source": "/mnt/hd1/home/john/dev/parcelerTest/parcelerTest/src/main/res/layout/activity_first.xml"
+    },
+    {
+        "merged": "/mnt/hd1/home/john/dev/parcelerTest/parcelerTest/build/intermediates/res/merged/debug/layout/activity_second.xml",
+        "source": "/mnt/hd1/home/john/dev/parcelerTest/parcelerTest/src/main/res/layout/activity_second.xml"
+    }
+]
