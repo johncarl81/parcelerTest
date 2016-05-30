@@ -1,1 +1,1 @@
-include ':parcelerTest'
+include ':parcelerTest', ':parcelerLib'
