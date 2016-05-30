@@ -13,39 +13,27 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package org.parceler.app;
+package org.parceler.lib;
 
 import android.app.Activity;
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
-import android.view.View;
-import android.view.View.OnClickListener;
-import android.widget.Button;
 import android.widget.TextView;
 import com.package1.name.UserVO;
+import org.parceler.Parcels;
 
-import java.lang.reflect.Field;
-
-public class FirstActivity extends Activity implements OnClickListener {
-    private TextView messageView;
+public class SecondActivity extends Activity {
+    public static final String EXTRA_EXAMPLE_PARCEL = "example parcel";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_first);
 
-        messageView = (TextView) findViewById(R.id.message);
-        Button submitView = (Button) findViewById(R.id.submit);
-        submitView.setOnClickListener(this);
-    }
+        UserVO userVO = Parcels.unwrap(getIntent().getParcelableExtra(EXTRA_EXAMPLE_PARCEL));
 
-    @Override
-    public void onClick(View view) {
-        String message = messageView.getText().toString();
-        UserVO userVO = new UserVO();
-        userVO.setLastName(message);
-
-        Intent intent = SecondActivity.buildIntent(this, userVO);
-        startActivity(intent);
+        setContentView(R.layout.activity_second);
+        TextView messageView = (TextView) findViewById(R.id.message);
+        messageView.setText(userVO.getLastName());
     }
 }
